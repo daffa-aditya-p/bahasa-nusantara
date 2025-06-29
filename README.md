@@ -19,7 +19,7 @@ Dirancang untuk mempermudah pembelajaran programming bagi pelajar dan pemula di 
 
 - 🔤 Translasi otomatis keyword Python → Bahasa Indonesia
 - 📚 Kompatibel dengan pustaka Python (NumPy, Pandas, scikit-learn, dll.)
-- 🖥️ Mode REPL interaktif seperti Python asli
+- 🖥️ Mode REPL interaktif seperti Python asli (BETA)
 - 🌈 Output berwarna & error dalam Bahasa Indonesia
 - ⚡ Performa tinggi (langsung eksekusi, tanpa file sementara)
 - 📄 Dukungan file `.nus`
