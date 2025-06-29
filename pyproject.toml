@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bahasa-nusantara"
+version = "2.0.0"
+description = "Python Interpreter dengan Sintaks Bahasa Indonesia untuk Pemula"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Daffa Aditya Pratama", email = "daffaadityp@proton.me"}
+]
+maintainers = [
+    {name = "Daffa Aditya Pratama", email = "daffaadityp@proton.me"}
+]
+keywords = ["indonesian", "bahasa", "indonesia", "python", "interpreter", "programming", "education", "beginner", "nusantara"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Software Development :: Interpreters",
+    "Natural Language :: Indonesian",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "termcolor>=1.1.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/daffa-aditya-p/bahasa-nusantara"
+Repository = "https://github.com/daffa-aditya-p/bahasa-nusantara"
+"Bug Reports" = "https://github.com/daffa-aditya-p/bahasa-nusantara/issues"
+Documentation = "https://github.com/daffa-aditya-p/bahasa-nusantara#readme"
+
+[project.scripts]
+jalankan = "bahasa_nusantara.indo:main"
+run = "bahasa_nusantara.indo:main"
+bahasa-nusantara = "bahasa_nusantara.indo:main"
+nus = "bahasa_nusantara.indo:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800",
+]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "--cov=bahasa_nusantara --cov-report=html --cov-report=term-missing"
